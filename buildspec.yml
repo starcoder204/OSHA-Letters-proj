@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Installing dependencies...
+      - npm install  # Install all necessary npm packages
+  build:
+    commands:
+      - echo Packaging Lambda function...
+      - zip -r lambda-package.zip .  # This will zip all the necessary files for Lambda
+
+artifacts:
+  files:
+    - lambda-package.zip  # Lambda deployment artifact
